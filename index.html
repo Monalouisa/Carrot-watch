@@ -6,7 +6,7 @@
 <title>Carrot Watch — Dein Pferd. Deine Ruhe.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=VeZQmG"></script>
+<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=W8ya8S"></script>
 <style>
   :root {
     --cream: #FAF6F0;
@@ -768,30 +768,6 @@
 </footer>
 
 <script>
-function handleSubmit() {
-  const email = document.getElementById('emailInput').value;
-  if (!email || !email.includes('@')) {
-    document.getElementById('emailInput').style.outline = '2px solid #C85A1E';
-    return;
-  }
-  document.getElementById('formInner').style.display = 'none';
-  document.getElementById('successMsg').style.display = 'block';
-  // Connect to Klaviyo here
-}
-
-function handleSubmit2() {
-  const email = document.getElementById('emailInput2').value;
-  if (!email || !email.includes('@')) {
-    document.getElementById('emailInput2').style.outline = '2px solid #C85A1E';
-    return;
-  }
-  document.getElementById('formInner2').style.display = 'none';
-  document.getElementById('successMsg2').style.display = 'block';
-}
-
-document.getElementById('emailInput').addEventListener('keypress', e => { if (e.key === 'Enter') handleSubmit(); });
-document.getElementById('emailInput2').addEventListener('keypress', e => { if (e.key === 'Enter') handleSubmit2(); });
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
