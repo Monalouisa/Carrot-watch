@@ -102,10 +102,11 @@
     font-size: clamp(2.8rem, 7vw, 5.5rem);
     line-height: 1.1;
     color: var(--dark);
-    max-width: 16ch;
+    max-width: 18ch;
     margin-bottom: 1.5rem;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.4s;
+    display: none; /* Wird via JS gesteuert */
   }
   .headline em { font-style: italic; color: var(--orange); }
 
@@ -118,6 +119,7 @@
     margin-bottom: 2rem;
     font-weight: 300;
     animation: fadeUp 0.8s ease forwards 0.6s;
+    display: none; /* Wird via JS gesteuert */
   }
 
   /* COUNTER BADGE */
@@ -189,68 +191,12 @@
     max-width: 480px;
   }
 
-  .form-inner {
-    display: flex;
-    background: white;
-    border: 1.5px solid var(--sand);
-    border-radius: 6px;
-    overflow: hidden;
-    box-shadow: 0 4px 40px rgba(180,120,60,0.1);
-    transition: box-shadow 0.3s ease;
-  }
-
-  .form-inner:focus-within {
-    box-shadow: 0 4px 50px rgba(200,90,30,0.2);
-    border-color: var(--orange-light);
-  }
-
-  input[type="email"] {
-    flex: 1;
-    padding: 1rem 1.25rem;
-    border: none;
-    outline: none;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.95rem;
-    color: var(--dark);
-    background: transparent;
-    font-weight: 300;
-  }
-
-  input[type="email"]::placeholder { color: var(--sand); }
-
-  button[type="submit"] {
-    padding: 1rem 1.5rem;
-    background: var(--orange);
-    color: white;
-    border: none;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.03em;
-    white-space: nowrap;
-    transition: background 0.2s ease;
-  }
-
-  button[type="submit"]:hover { background: var(--orange-light); }
-
   .form-note {
     font-size: 0.72rem;
     color: var(--sage);
     margin-top: 0.75rem;
     text-align: center;
     letter-spacing: 0.03em;
-  }
-
-  .success-msg {
-    display: none;
-    background: var(--sage);
-    color: white;
-    padding: 1rem 1.5rem;
-    border-radius: 6px;
-    font-size: 0.9rem;
-    text-align: center;
-    line-height: 1.6;
   }
 
   .scroll-hint {
@@ -581,8 +527,6 @@
     .why-item { border-right: none; }
     .why-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--sand-light); }
     .why-item:last-child { border-bottom: none; }
-    .form-inner { flex-direction: column; }
-    button[type="submit"] { width: 100%; padding: 1rem; }
     footer { flex-direction: column; gap: 0.5rem; text-align: center; }
     .perks { flex-direction: column; align-items: center; }
     .perk-divider { display: none; }
@@ -603,12 +547,24 @@
   <div class="hero-content">
     <p class="eyebrow">Das erste Pferde-Wearable für den Alltag</p>
 
-    <h1 class="headline">
-      Weißt du gerade wie es deinem Pferd <em>geht?</em>
+    <!-- VARIATION A: SAFETY/HRV HEADLINE -->
+    <h1 class="headline" id="headline-variant-a">
+      Schlafe beruhigt: Die <em>Smartwatch</em> für dein Pferd überwacht Stress & Wohlbefinden 24/7.
     </h1>
 
-    <p class="subline">
-      Carrot Watch zeigt dir — morgens wie dein Pferd geschlafen hat, und tagsüber live dabei. Herzfrequenz, Schlaf, Stress, Frühwarnzeichen. Klar und einfach.
+    <!-- VARIATION B: MINIMAL INNOVATION HEADLINE -->
+    <h1 class="headline" id="headline-variant-b">
+      Das kleinste <em>Wearable</em> für die Gesundheit deines Pferdes.
+    </h1>
+
+    <!-- VARIATION A: SAFETY/HRV SUBLINE -->
+    <p class="subline" id="subline-variant-a">
+      Unser unauffälliger Schweif-Sensor misst kontinuierlich die Herzratenvariabilität (HRV) — das körpereigene Stress-Barometer deines Pferdes. Die App benachrichtigt dich sofort bei untypischem Liegeverhalten oder plötzlichen Stresssymptomen.
+    </p>
+
+    <!-- VARIATION B: MINIMAL INNOVATION SUBLINE -->
+    <p class="subline" id="subline-variant-b">
+      Ein intelligenter Sensor, unauffällig an der Schweifrübe platziert. Er misst Vitalwerte, Stresslevel und Bewegungsmuster rund um die Uhr via Smartwatch-Technologie — für maximale Gewissheit im Alltag.
     </p>
 
     <div class="counter-badge">
@@ -644,7 +600,7 @@
       <div class="why-item">
         <div class="why-num">01</div>
         <div class="why-title">Dein Pferd kann nicht sprechen</div>
-        <p class="why-text">Frühwarnsignale für Kolik, Stress oder Unruhe werden oft zu spät erkannt — weil niemand 24/7 vor Ort sein kann. Carrot Watch ist deine Augen im Stall.</p>
+        <p class="why-text">Erste Anzeichen für Stress oder Unruhe werden oft zu spät erkannt — weil niemand 24/7 vor Ort sein kann. Carrot Watch ist dein Auge im Stall.</p>
       </div>
       <div class="why-item">
         <div class="why-num">02</div>
@@ -654,7 +610,7 @@
       <div class="why-item">
         <div class="why-num">03</div>
         <div class="why-title">24/7 — auch ohne Sattel</div>
-        <p class="why-text">Das Schweifband sitzt immer — beim Reiten, auf der Weide, in der Box. Kein tägliches Montieren, kein Vergessen.</p>
+        <p class="why-text">Das Schweifband sitzt immer — auf der Weide, in der Box, im Alltag. Kein tägliches Montieren, kein Vergessen.</p>
       </div>
       <div class="why-item">
         <div class="why-num">04</div>
@@ -676,50 +632,50 @@
       <li class="measure-item">
         <span class="measure-icon">❤️</span>
         <div class="measure-text">
-          <strong>Herzfrequenz</strong>
-          <span>In Ruhe und beim Training — kontinuierlich, ohne Unterbrechung</span>
+          <strong>Herzfrequenz & HRV</strong>
+          <span>In Ruhe und Entspannung — kontinuierlich und präzise über die Schweifunterseite</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">🏃</span>
         <div class="measure-text">
-          <strong>Bewegung & Gangarten</strong>
-          <span>Schritt, Trab, Galopp — automatisch erkannt</span>
+          <strong>Bewegungsaktivität</strong>
+          <span>Aktive Phasen vs. Stehzeiten im Tagesverlauf automatisch erfasst</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">🌙</span>
         <div class="measure-text">
-          <strong>Schlaf & Ruhe</strong>
-          <span>Liegt dein Pferd? Steht es? Wie war die Nacht wirklich?</span>
+          <strong>Schlaf & Ruheverhalten</strong>
+          <span>Liegt dein Pferd? Steht es? Wie erholsam war die Nacht wirklich?</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">😮‍💨</span>
         <div class="measure-text">
-          <strong>Stress & Unruhe</strong>
-          <span>Erkennt ungewöhnliche Muster die auf Stress hinweisen könnten</span>
+          <strong>Stresslevel-Indikator</strong>
+          <span>Erkennt ungewöhnliche Verhaltensmuster, die auf Stress hinweisen können</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">🌡️</span>
         <div class="measure-text">
           <strong>Hauttemperatur</strong>
-          <span>Abweichungen als früher Gesundheitshinweis</span>
+          <span>Kontinuierliche Temperaturtrends als verlässlicher Gesundheitshinweis</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">🚨</span>
         <div class="measure-text">
-          <strong>Kolik-Frühwarnung</strong>
-          <span>Ungewöhnliche Wälzmuster werden sofort erkannt</span>
+          <strong>Ruhe-Veränderungen</strong>
+          <span>Ungewöhnliche Aktivitäts-Abweichungen in der Box werden sofort registriert</span>
         </div>
       </li>
       <li class="measure-item">
         <span class="measure-icon">📍</span>
         <div class="measure-text">
-          <strong>Aktivität auf der Weide</strong>
-          <span>Immer wissen was dein Pferd gerade macht</span>
+          <strong>Verhalten auf der Weide</strong>
+          <span>Immer genau wissen, wie aktiv dein Pferd in der Herde ist</span>
         </div>
       </li>
     </ul>
@@ -768,6 +724,7 @@
 </footer>
 
 <script>
+// --- INTERSECTION OBSERVER FOR ANIMATIONS ---
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -782,6 +739,37 @@ document.querySelectorAll('.why-item, .measure-item').forEach(el => {
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
   observer.observe(el);
+});
+
+// --- CLIENT-SIDE A/B TESTING GENERATOR ---
+document.addEventListener("DOMContentLoaded", function() {
+  let assignedHook = sessionStorage.getItem('carrot_hook_variant');
+
+  if (!assignedHook) {
+    assignedHook = Math.random() < 0.5 ? 'Safety_HRV' : 'Minimal_Innovation';
+    sessionStorage.setItem('carrot_hook_variant', assignedHook);
+  }
+
+  if (assignedHook === 'Safety_HRV') {
+    document.getElementById('headline-variant-a').style.display = 'block';
+    document.getElementById('subline-variant-a').style.display = 'block';
+  } else {
+    document.getElementById('headline-variant-b').style.display = 'block';
+    document.getElementById('subline-variant-b').style.display = 'block';
+  }
+
+  // --- KLAVIYO INTEGRATION FOR EMBEDDED FORMS ---
+  window.addEventListener("klaviyoForms", function(e) {
+    if (e.detail.type === 'submit') {
+      const currentVariant = sessionStorage.getItem('carrot_hook_variant') || 'Unknown';
+      
+      // Nutzt die offizielle Klaviyo Onsite-Identifizierung
+      const _learnq = window._learnq || [];
+      _learnq.push(['identify', {
+        'Landingpage_Variant': currentVariant
+      }]);
+    }
+  });
 });
 </script>
 </body>
