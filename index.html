@@ -6,7 +6,6 @@
 <title>Carrot Watch — Dein Pferd. Deine Ruhe.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<script async type="text/javascript" src="https://static.klaviyo.com/onsite/js/klaviyo.js?company_id=W8ya8S"></script>
 <style>
   :root {
     --cream: #FAF6F0;
@@ -105,8 +104,6 @@
     max-width: 20ch;
     margin-bottom: 1.5rem;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
   .headline em { font-style: italic; color: var(--orange); }
 
@@ -118,8 +115,6 @@
     margin-bottom: 2rem;
     font-weight: 300;
     display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
 
   /* COUNTER BADGE */
@@ -172,7 +167,7 @@
   .form-wrap {
     width: 100%;
     max-width: 480px;
-    min-height: 80px;
+    min-height: 120px;
     margin: 0 auto;
   }
 
@@ -219,4 +214,72 @@
   .why-item { padding: 2.5rem; border-bottom: 1px solid var(--sand-light); border-right: 1px solid var(--sand-light); }
   .why-item:nth-child(even) { border-right: none; }
   .why-item:nth-last-child(-n+2) { border-bottom: none; }
-  .why-title { font-size:
+  .why-title { font-size: 1rem; font-weight: 500; color: var(--brown); margin-bottom: 0.75rem; }
+  .why-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; color: var(--sand-light); line-height: 1; margin-bottom: 1rem; }
+  .why-text { font-size: 0.88rem; color: var(--brown); opacity: 0.65; line-height: 1.7; }
+
+  /* MEASURES */
+  .measures-section { padding: 6rem 2rem; background: var(--dark); color: var(--cream); position: relative; }
+  .measures-section .section-label { color: var(--orange-light); }
+  .measures-section .section-label::after { background: rgba(255,255,255,0.1); }
+  .measures-headline { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 3rem); line-height: 1.2; max-width: 22ch; margin-bottom: 3rem; color: var(--cream); }
+  .measures-headline em { font-style: italic; color: var(--orange-light); }
+  .measures-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; list-style: none; }
+  .measure-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.5rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; }
+  .measure-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .measure-text strong { display: block; font-size: 0.85rem; font-weight: 500; color: var(--cream); margin-bottom: 0.3rem; }
+  .measure-text span { font-size: 0.78rem; color: rgba(255,255,255,0.4); line-height: 1.5; }
+
+  /* FOUNDER */
+  .founder-section { padding: 6rem 2rem; background: var(--cream); position: relative; }
+  .founder-inner { max-width: 700px; margin: 0 auto; }
+  .founder-quote { font-family: 'Playfair Display', serif; font-size: clamp(1.3rem, 3vw, 1.9rem); line-height: 1.5; color: var(--brown); margin-bottom: 2.5rem; font-style: italic; position: relative; padding-left: 2rem; }
+  .founder-quote::before { content: '"'; position: absolute; left: 0; top: -0.5rem; font-size: 4rem; color: var(--sand-light); font-family: 'Playfair Display', serif; line-height: 1; }
+  .founder-credit { display: flex; align-items: center; gap: 1rem; padding-left: 2rem; }
+  .founder-dot { width: 36px; height: 36px; background: var(--orange); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+  .founder-name { font-size: 0.85rem; font-weight: 500; color: var(--dark); }
+  .founder-title { font-size: 0.75rem; color: var(--sage); margin-top: 0.2rem; }
+
+  /* CTA BOTTOM */
+  .cta-section { padding: 6rem 2rem; background: var(--sand-light); text-align: center; position: relative; }
+  .cta-headline { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--dark); margin-bottom: 1rem; line-height: 1.2; }
+  .cta-sub { font-size: 0.95rem; color: var(--brown); opacity: 0.7; margin-bottom: 1.5rem; max-width: 42ch; margin-left: auto; margin-right: auto; }
+  .cta-perks { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
+  .cta-perk { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--brown); }
+  .cta-form { max-width: 460px; margin: 0 auto; min-height: 120px; }
+
+  footer { padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--sand-light); background: var(--cream); }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--brown); }
+  .footer-logo span { color: var(--orange); }
+  .footer-note { font-size: 0.7rem; color: var(--sage); }
+
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-30px); } }
+  @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-item { border-right: none; border-bottom: 1px solid var(--sand-light); }
+    .why-item:last-child { border-bottom: none; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .perks, .cta-perks { flex-direction: column; align-items: center; }
+    .perk-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="deco-circle deco-1"></div>
+  <div class="deco-circle deco-2"></div>
+
+  <nav>
+    <div class="logo">Carrot<span>Watch</span></div>
+    <div class="nav-tag">In Entwicklung</div>
+  </nav>
+
+  <div class="hero-content">
+    <p class="eyebrow">Das erste Pferde-Wearable für den Alltag</p>
+
+    <h1 class="headline">
+      Schlafe beruhigt: Die <em>Smartwatch</em> für dein Pferd überw
