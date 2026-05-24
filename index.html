@@ -76,8 +76,11 @@
     border-radius: 100px;
   }
 
+  /* Hier zwingen wir den Inhalt, IMMER sichtbar zu sein */
   .hero-content {
-    display: flex;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -104,6 +107,8 @@
     max-width: 20ch;
     margin-bottom: 1.5rem;
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   .headline em { font-style: italic; color: var(--orange); }
 
@@ -115,9 +120,10 @@
     margin-bottom: 2rem;
     font-weight: 300;
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-  /* COUNTER BADGE */
   .counter-badge {
     display: inline-flex;
     align-items: center;
@@ -142,7 +148,6 @@
 
   .counter-num { font-weight: 500; color: var(--orange); }
 
-  /* PERKS */
   .perks {
     display: flex;
     gap: 0.75rem;
@@ -163,7 +168,6 @@
   .perk-icon { font-size: 0.9rem; }
   .perk-divider { width: 3px; height: 3px; background: var(--sand); border-radius: 50%; }
 
-  /* FORM ISOLATION BOX */
   .form-wrap {
     width: 100%;
     max-width: 480px;
@@ -261,25 +265,4 @@
     .why-grid { grid-template-columns: 1fr; }
     .why-item { border-right: none; border-bottom: 1px solid var(--sand-light); }
     .why-item:last-child { border-bottom: none; }
-    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
-    .perks, .cta-perks { flex-direction: column; align-items: center; }
-    .perk-divider { display: none; }
-  }
-</style>
-</head>
-<body>
-
-<div class="hero">
-  <div class="deco-circle deco-1"></div>
-  <div class="deco-circle deco-2"></div>
-
-  <nav>
-    <div class="logo">Carrot<span>Watch</span></div>
-    <div class="nav-tag">In Entwicklung</div>
-  </nav>
-
-  <div class="hero-content">
-    <p class="eyebrow">Das erste Pferde-Wearable für den Alltag</p>
-
-    <h1 class="headline">
-      Schlafe beruhigt: Die <em>Smartwatch</em> für dein Pferd überw
+    footer
