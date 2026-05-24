@@ -76,11 +76,8 @@
     border-radius: 100px;
   }
 
-  /* Hier zwingen wir den Inhalt, IMMER sichtbar zu sein */
   .hero-content {
-    display: flex !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -106,9 +103,6 @@
     color: var(--dark);
     max-width: 20ch;
     margin-bottom: 1.5rem;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
   .headline em { font-style: italic; color: var(--orange); }
 
@@ -119,9 +113,6 @@
     line-height: 1.7;
     margin-bottom: 2rem;
     font-weight: 300;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
   }
 
   .counter-badge {
@@ -167,21 +158,6 @@
 
   .perk-icon { font-size: 0.9rem; }
   .perk-divider { width: 3px; height: 3px; background: var(--sand); border-radius: 50%; }
-
-  .form-wrap {
-    width: 100%;
-    max-width: 480px;
-    min-height: 120px;
-    margin: 0 auto;
-  }
-
-  .form-note {
-    font-size: 0.72rem;
-    color: var(--sage);
-    margin-top: 0.75rem;
-    text-align: center;
-    letter-spacing: 0.03em;
-  }
 
   .scroll-hint {
     text-align: center;
@@ -250,7 +226,6 @@
   .cta-sub { font-size: 0.95rem; color: var(--brown); opacity: 0.7; margin-bottom: 1.5rem; max-width: 42ch; margin-left: auto; margin-right: auto; }
   .cta-perks { display: flex; gap: 0.75rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; }
   .cta-perk { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; color: var(--brown); }
-  .cta-form { max-width: 460px; margin: 0 auto; min-height: 120px; }
 
   footer { padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; border-top: 1px solid var(--sand-light); background: var(--cream); }
   .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--brown); }
@@ -265,4 +240,163 @@
     .why-grid { grid-template-columns: 1fr; }
     .why-item { border-right: none; border-bottom: 1px solid var(--sand-light); }
     .why-item:last-child { border-bottom: none; }
-    footer
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .perks, .cta-perks { flex-direction: column; align-items: center; }
+    .perk-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="deco-circle deco-1"></div>
+  <div class="deco-circle deco-2"></div>
+
+  <nav>
+    <div class="logo">Carrot<span>Watch</span></div>
+    <div class="nav-tag">In Entwicklung</div>
+  </nav>
+
+  <div class="hero-content">
+    <p class="eyebrow">Das erste Pferde-Wearable für den Alltag</p>
+
+    <h1 class="headline">
+      Schlafe beruhigt: Die <em>Smartwatch</em> für dein Pferd überwacht Stress & Wohlbefinden 24/7.
+    </h1>
+
+    <p class="subline">
+      Unser unauffälliger Schweif-Sensor misst kontinuierlich die Herzratenvariabilität (HRV) — das körpereigene Stress-Barometer deines Pferdes. Die App benachrichtigt dich sofort bei untypischem Liegeverhalten oder plötzlichen Stresssymptomen.
+    </p>
+
+    <div class="counter-badge">
+      <div class="counter-dot"></div>
+      <span><span class="counter-num" id="live-counter">44</span> Reiterinnen sind bereits auf der Warteliste</span>
+    </div>
+
+    <div class="perks">
+      <div class="perk"><span class="perk-icon">🧪</span> Teil der Produktentwicklung</div>
+      <div class="perk-divider"></div>
+      <div class="perk"><span class="perk-icon">🎁</span> Kostenloser Beta-Zugang</div>
+    </div>
+    
+    <div style="background: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--brown); margin: 1rem 0;">
+      [TEST-MODUS: Klaviyo-Formular hier]
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Mehr erfahren</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<section class="why-section">
+  <div class="section-inner">
+    <p class="section-label">Warum Carrot Watch</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-title">Dein Pferd kann nicht sprechen</div>
+        <p class="why-text">Erste Anzeichen für Stress oder Unruhe werden oft zu spät erkannt — weil niemand 24/7 vor Ort sein kann. Carrot Watch ist dein Auge im Stall.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-title">Kein Fachjargon, keine Graphen</div>
+        <p class="why-text">Keine komplizierten Auswertungen die man studieren muss. Nur eine klare Antwort auf eine Frage: Geht es meinem Pferd heute gut?</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-title">24/7 — auch ohne Sattel</div>
+        <p class="why-text">Das Schweifband sitzt immer — auf der Weide, in der Box, im Alltag. Kein tägliches Montieren, kein Vergessen.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-title">Gebaut von einer Reiterin</div>
+        <p class="why-text">Carrot Watch entstand weil wir das Problem selbst kennen. Eigene Pferde, eigene Erfahrung — keine Ingenieure die raten was Reiterinnen brauchen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="measures-section">
+  <div class="section-inner">
+    <p class="section-label">Was Carrot Watch misst</p>
+    <h2 class="measures-headline"> Alles was zählt — <em>morgens der Überblick, tagsüber live dabei</em></h2>
+    <ul class="measures-list">
+      <li class="measure-item">
+        <span class="measure-icon">❤️</span>
+        <div class="measure-text">
+          <strong>Herzfrequenz & HRV</strong>
+          <span>In Ruhe und Entspannung — kontinuierlich und präzise über die Schweifunterseite</span>
+        </div>
+      </li>
+      <li class="measure-item">
+        <span class="measure-icon">🏃</span>
+        <div class="measure-text">
+          <strong>Bewegungsaktivität</strong>
+          <span>Aktive Phasen vs. Stehzeiten im Tagesverlauf automatisch erfasst</span>
+        </div>
+      </li>
+      <li class="measure-item">
+        <span class="measure-icon">🌙</span>
+        <div class="measure-text">
+          <strong>Schlaf & Ruheverhalten</strong>
+          <span>Liegt dein Pferd? Steht es? Wie erholsam war die Nacht wirklich?</span>
+        </div>
+      </li>
+      <li class="measure-item">
+        <span class="measure-icon">😮‍💨</span>
+        <div class="measure-text">
+          <strong>Stresslevel-Indikator</strong>
+          <span>Erkennt ungewöhnliche Verhaltensmuster, die auf Stress hinweisen können</span>
+        </div>
+      </li>
+      <li class="measure-item">
+        <span class="measure-icon">🌡️</span>
+        <div class="measure-text">
+          <strong>Hauttemperatur</strong>
+          <span>Kontinuierliche Temperaturtrends als verlässlicher Gesundheitshinweis</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="founder-section">
+  <div class="section-inner">
+    <p class="section-label">Die Idee dahinter</p>
+    <blockquote class="founder-quote">
+      Ich bin jeden Abend nach Hause gefahren und hab mich gefragt: wie geht es meinem Pferd gerade? Diese Frage hat mich nicht losgelassen. Also bauen wir die Antwort.
+    </blockquote>
+    <div class="founder-credit">
+      <div class="founder-dot">🥕</div>
+      <div>
+        <div class="founder-name">Mona</div>
+        <div class="founder-title">Gründerin · Reiterin · Pferdebesitzerin</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2 class="cta-headline">Sei dabei. Von Anfang an.</h2>
+  <p class="cta-sub">Wir nehmen dich mit auf die Reise — von der Idee bis zum Launch. Kein Marketing, nur echte Einblicke hinter die Kulissen.</p>
+  
+  <div class="cta-perks">
+    <div class="cta-perk"><span>🧪</span> Teil der Produktentwicklung</div>
+    <div class="perk-divider"></div>
+    <div class="cta-perk"><span>🎁</span> Kostenloser Beta-Zugang</div>
+  </div>
+  
+  <div style="background: rgba(0,0,0,0.05); padding: 1.5rem; border-radius: 4px; font-size: 0.85rem; color: var(--brown); max-width: 460px; margin: 0 auto;">
+    [TEST-MODUS: Klaviyo-Formular hier]
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Carrot<span>Watch</span></div>
+  <div class="footer-note">© 2026 · In Entwicklung · DACH</div>
+</footer>
+
+</body>
+</html>
