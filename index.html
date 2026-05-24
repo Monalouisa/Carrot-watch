@@ -305,3 +305,319 @@
     color: var(--brown);
     margin-bottom: 0.75rem;
   }
+
+  .why-text {
+    font-size: 0.88rem;
+    color: var(--brown);
+    opacity: 0.65;
+    line-height: 1.7;
+  }
+
+  /* MEASURES */
+  .measures-section {
+    padding: 6rem 2rem;
+    background: var(--dark);
+    color: var(--cream);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .measures-section::before {
+    content: '';
+    position: absolute;
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(200,90,30,0.15) 0%, transparent 60%);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+
+  .measures-section .section-label { color: var(--orange-light); }
+  .measures-section .section-label::after { background: rgba(255,255,255,0.1); }
+
+  .measures-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.2;
+    max-width: 22ch;
+    margin-bottom: 3rem;
+    color: var(--cream);
+  }
+  .measures-headline em { font-style: italic; color: var(--orange-light); }
+
+  .measures-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+  }
+
+  .measure-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.5rem;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+  }
+
+  .measure-item:hover { background: rgba(200,90,30,0.1); }
+  .measure-icon { font-size: 1.4rem; flex-shrink: 0; margin-top: 0.1rem; }
+
+  .measure-text strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.3rem;
+  }
+
+  .measure-text span {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.5;
+  }
+
+  /* FOUNDER */
+  .founder-section {
+    padding: 6rem 2rem;
+    background: var(--cream);
+    position: relative;
+  }
+
+  .founder-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sand-light), transparent);
+  }
+
+  .founder-inner { max-width: 700px; margin: 0 auto; }
+
+  .founder-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.3rem, 3vw, 1.9rem);
+    line-height: 1.5;
+    color: var(--brown);
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    position: relative;
+    padding-left: 2rem;
+  }
+
+  .founder-quote::before {
+    content: '"';
+    position: absolute;
+    left: 0; top: -0.5rem;
+    font-size: 4rem;
+    color: var(--sand-light);
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+  }
+
+  .founder-credit {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-left: 2rem;
+  }
+
+  .founder-dot {
+    width: 36px; height: 36px;
+    background: var(--orange);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  .founder-name { font-size: 0.85rem; font-weight: 500; color: var(--dark); }
+  .founder-title { font-size: 0.75rem; color: var(--sage); margin-top: 0.2rem; }
+
+  /* CTA BOTTOM */
+  .cta-section {
+    padding: 6rem 2rem;
+    background: var(--sand-light);
+    text-align: center;
+    position: relative;
+  }
+
+  .cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--sand), transparent);
+  }
+
+  .cta-headline {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    color: var(--dark);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .cta-sub {
+    font-size: 0.95rem;
+    color: var(--brown);
+    opacity: 0.7;
+    margin-bottom: 1.5rem;
+    max-width: 42ch;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .cta-perks {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .cta-perk {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.78rem;
+    color: var(--brown);
+    opacity: 0.75;
+  }
+
+  .cta-form { max-width: 460px; margin: 0 auto; }
+
+  footer {
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--sand-light);
+    background: var(--cream);
+  }
+
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 0.9rem; color: var(--brown); }
+  .footer-logo span { color: var(--orange); }
+  .footer-note { font-size: 0.7rem; color: var(--sage); letter-spacing: 0.05em; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.5rem; }
+    .why-grid { grid-template-columns: 1fr; }
+    .why-item { border-right: none; }
+    .why-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--sand-light); }
+    .why-item:last-child { border-bottom: none; }
+    footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .perks { flex-direction: column; align-items: center; }
+    .perk-divider { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="deco-circle deco-1"></div>
+  <div class="deco-circle deco-2"></div>
+
+  <nav>
+    <div class="logo">Carrot<span>Watch</span></div>
+    <div class="nav-tag">In Entwicklung</div>
+  </nav>
+
+  <div class="hero-content">
+    <p class="eyebrow">Das erste Pferde-Wearable für den Alltag</p>
+
+    <h1 class="headline" id="headline-variant-a">
+      Schlafe beruhigt: Die <em>Smartwatch</em> für dein Pferd überwacht Stress & Wohlbefinden 24/7.
+    </h1>
+
+    <h1 class="headline" id="headline-variant-b">
+      Das kleinste <em>Wearable</em> für die Gesundheit deines Pferdes.
+    </h1>
+
+    <p class="subline" id="subline-variant-a">
+      Unser unauffälliger Schweif-Sensor misst kontinuierlich die Herzratenvariabilität (HRV) — das körpereigene Stress-Barometer deines Pferdes. Die App benachrichtigt dich sofort bei untypischem Liegeverhalten oder plötzlichen Stresssymptomen.
+    </p>
+
+    <p class="subline" id="subline-variant-b">
+      Ein intelligenter Sensor, unauffällig an der Schweifrübe platziert. Er misst Vitalwerte, Stresslevel und Bewegungsmuster rund um die Uhr via Smartwatch-Technologie — für maximale Gewissheit im Alltag.
+    </p>
+
+    <div class="counter-badge">
+      <div class="counter-dot"></div>
+      <span><span class="counter-num" id="live-counter">44</span> Reiterinnen sind bereits auf der Warteliste</span>
+    </div>
+
+    <div class="perks">
+      <div class="perk"><span class="perk-icon">🧪</span> Teil der Produktentwicklung</div>
+      <div class="perk-divider"></div>
+      <div class="perk"><span class="perk-icon">🎁</span> Kostenloser Beta-Zugang</div>
+      <div class="perk-divider"></div>
+      <div class="perk" id="slots-perk"><span class="perk-icon">🥕</span> Nur noch <strong style="color:var(--orange);margin-left:3px" id="live-slots">456 Plätze</strong> verfügbar</div>
+    </div>
+
+    <div class="form-wrap">
+      <div class="klaviyo-form-VeZQmG"></div>
+      <p class="form-note">Kein Spam · Nur echte Einblicke hinter die Kulissen · Jederzeit abmeldbar</p>
+    </div>
+  </div>
+
+  <div class="scroll-hint">
+    <span>Mehr erfahren</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</div>
+
+<section class="why-section">
+  <div class="section-inner">
+    <p class="section-label">Warum Carrot Watch</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="why-num">01</div>
+        <div class="why-title">Dein Pferd kann nicht sprechen</div>
+        <p class="why-text">Erste Anzeichen für Stress oder Unruhe werden oft zu spät erkannt — weil niemand 24/7 vor Ort sein kann. Carrot Watch ist dein Auge im Stall.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">02</div>
+        <div class="why-title">Kein Fachjargon, keine Graphen</div>
+        <p class="why-text">Keine komplizierten Auswertungen die man studieren muss. Nur eine klare Antwort auf eine Frage: Geht es meinem Pferd heute gut?</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">03</div>
+        <div class="why-title">24/7 — auch ohne Sattel</div>
+        <p class="why-text">Das Schweifband sitzt immer — auf der Weide, in der Box, im Alltag. Kein tägliches Montieren, kein Vergessen.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-num">04</div>
+        <div class="why-title">Gebaut von einer Reiterin</div>
+        <p class="why-text">Carrot Watch entstand weil wir das Problem selbst kennen. Eigene Pferde, eigene Erfahrung — keine Ingenieure die raten was Reiterinnen brauchen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="measures-section">
+  <div class="section-inner">
+    <p class="section-label">Was Carrot Watch misst</p>
+    <h2 class="measures-headline">
+      Alles was
