@@ -494,14 +494,10 @@ document.querySelectorAll('.why-item, .measure-item').forEach(el => {
   observer.observe(el);
 });
 
-// --- CLIENT-SIDE A/B TESTING GENERATOR ---
-document.addEventListener("DOMContentLoaded", function() {
-  }
-
   // --- KLAVIYO INTEGRATION FOR EMBEDDED FORMS ---
   window.addEventListener("klaviyoForms", function(e) {
     if (e.detail.type === 'submit') {
-      const currentVariant = sessionStorage.getItem('carrot_hook_variant') || 'Unknown';
+     const currentVariant = 'Main';
       
       // Nutzt die offizielle Klaviyo Onsite-Identifizierung
       const _learnq = window._learnq || [];
