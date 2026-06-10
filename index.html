@@ -496,19 +496,6 @@ document.querySelectorAll('.why-item, .measure-item').forEach(el => {
 
 // --- CLIENT-SIDE A/B TESTING GENERATOR ---
 document.addEventListener("DOMContentLoaded", function() {
-  let assignedHook = sessionStorage.getItem('carrot_hook_variant');
-
-  if (!assignedHook) {
-    assignedHook = Math.random() < 0.5 ? 'Safety_HRV' : 'Minimal_Innovation';
-    sessionStorage.setItem('carrot_hook_variant', assignedHook);
-  }
-
-  if (assignedHook === 'Safety_HRV') {
-    document.getElementById('headline-variant-a').style.display = 'block';
-    document.getElementById('subline-variant-a').style.display = 'block';
-  } else {
-    document.getElementById('headline-variant-b').style.display = 'block';
-    document.getElementById('subline-variant-b').style.display = 'block';
   }
 
   // --- KLAVIYO INTEGRATION FOR EMBEDDED FORMS ---
